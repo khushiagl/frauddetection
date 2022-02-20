@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Fraud Detection</title>
+  <style>
+    body {
+      background-color: #FFCC00;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 140px;
+      font-size: 60px;
+      margin: -15px;
+    }
+
+    p {
+      font-family: sans-serif;
+      color: #907400;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id=ipText></h1>
+  <p>(Fraud?)</p>
+  <script>
+var url = "https://api.mage.ai/v1/predict";
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url);
+
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = `{
+  "api_key": "qHvIsFtv2aKUs2IMGZicnHPa5KsbOKj8nm1z9EdI",
+  "features": [
+    {
+      "merchant_city": "91752",
+      "merchant_name": "-4282466774399734300",
+      "zip": "91752"
+    }
+  ],
+  "model": "custom_prediction_classification_1645318807168",
+  "version": "4"
+}`;
+
+xhr.send(data);
+
+  </script>
+</body>
+
+</html>
