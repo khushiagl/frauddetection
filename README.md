@@ -10,4 +10,4 @@ HTTP request wasn't being authorized
 First ML Project
 
 
-https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/843/426/datas/original.PNG
+![Welcome Page](./original.png)
